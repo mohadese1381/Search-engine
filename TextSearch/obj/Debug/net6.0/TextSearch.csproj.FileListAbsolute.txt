@@ -1,0 +1,15 @@
+D:\ProjectsC#\TextSearch\TextSearch\bin\Debug\net6.0\TextSearch.exe
+D:\ProjectsC#\TextSearch\TextSearch\bin\Debug\net6.0\TextSearch.deps.json
+D:\ProjectsC#\TextSearch\TextSearch\bin\Debug\net6.0\TextSearch.runtimeconfig.json
+D:\ProjectsC#\TextSearch\TextSearch\bin\Debug\net6.0\TextSearch.dll
+D:\ProjectsC#\TextSearch\TextSearch\bin\Debug\net6.0\TextSearch.pdb
+D:\ProjectsC#\TextSearch\TextSearch\obj\Debug\net6.0\TextSearch.csproj.AssemblyReference.cache
+D:\ProjectsC#\TextSearch\TextSearch\obj\Debug\net6.0\TextSearch.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectsC#\TextSearch\TextSearch\obj\Debug\net6.0\TextSearch.AssemblyInfoInputs.cache
+D:\ProjectsC#\TextSearch\TextSearch\obj\Debug\net6.0\TextSearch.AssemblyInfo.cs
+D:\ProjectsC#\TextSearch\TextSearch\obj\Debug\net6.0\TextSearch.csproj.CoreCompileInputs.cache
+D:\ProjectsC#\TextSearch\TextSearch\obj\Debug\net6.0\TextSearch.dll
+D:\ProjectsC#\TextSearch\TextSearch\obj\Debug\net6.0\refint\TextSearch.dll
+D:\ProjectsC#\TextSearch\TextSearch\obj\Debug\net6.0\TextSearch.pdb
+D:\ProjectsC#\TextSearch\TextSearch\obj\Debug\net6.0\TextSearch.genruntimeconfig.cache
+D:\ProjectsC#\TextSearch\TextSearch\obj\Debug\net6.0\ref\TextSearch.dll
