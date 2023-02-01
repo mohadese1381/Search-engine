@@ -3,5 +3,5 @@
 public interface IFileReader
 {
     public void ReadFile();
-    public void PrintFileContent(string[] files);
+    public void PrintFileContent();
 }
