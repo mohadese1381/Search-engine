@@ -2,6 +2,6 @@
 
 public interface IFileReader
 {
-    public void ReadFile();
+    public string[] ReadFile();
     public void PrintFileContent();
 }

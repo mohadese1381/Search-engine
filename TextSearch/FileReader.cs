@@ -1,11 +1,12 @@
-﻿namespace TextSearch;
+﻿using System.Text;
+
+namespace TextSearch;
 
 public class FileReader : IFileReader
 {
     private string[] filesArray;
     private string[] textFiles;
-    private string[] filteredFiles;
-    public void ReadFile()
+    public string[] ReadFile()
     {
         //get all files
         filesArray = Directory.GetFiles("C:\\Users\\NOBEL\\Desktop\\AllFiles");
@@ -16,8 +17,10 @@ public class FileReader : IFileReader
         {
             textFiles[i] = File.ReadAllText(filesArray[i]);
         }
+
+        return textFiles;
         //print files Test
-        PrintFileContent();
+        // PrintFileContent();
     }
     public void PrintFileContent()
     {
