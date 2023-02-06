@@ -9,9 +9,12 @@ public static class Program
 
         FilterFile fileFilter = new FilterFile();
         string[] filteredFile = fileFilter.FilterFiles(file);
-
+        
         InvertedIndex invertedIndex = new InvertedIndex();
         invertedIndex.SetInvertedIndex(filteredFile);
         Dictionary<string, HashSet<string>> finalFile = invertedIndex.GetInvertedIndex();
+
+        UserPanel userPanel = new UserPanel();
+        userPanel.Search(finalFile);
     }
 }
