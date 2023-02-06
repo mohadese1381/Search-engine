@@ -5,6 +5,13 @@ public static class Program
     static void Main(string[] args)
     {
         FileReader fileReader = new FileReader();
-        fileReader.ReadFile();
+        string[] file = fileReader.ReadFile();
+
+        FilterFile fileFilter = new FilterFile();
+        string[] filteredFile = fileFilter.FilterFiles(file);
+
+        InvertedIndex invertedIndex = new InvertedIndex();
+        invertedIndex.SetInvertedIndex(filteredFile);
+        Dictionary<string, HashSet<string>> finalFile = invertedIndex.GetInvertedIndex();
     }
 }
