@@ -15,6 +15,7 @@ public static class Program
         Dictionary<string, HashSet<string>> finalFile = invertedIndex.GetInvertedIndex();
 
         UserPanel userPanel = new UserPanel();
-        userPanel.Search(finalFile);
+        userPanel.SetFinalFile(finalFile);
+        userPanel.ShowResult(userPanel.Search(userPanel.GetInput()));
     }
 }

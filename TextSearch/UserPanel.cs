@@ -3,23 +3,62 @@
 public class UserPanel : IUserPanel
 {
     private string _word;
-    private HashSet<string> filesNumbers = new HashSet<string>();
-    public void Search( Dictionary<string, HashSet<string>> finalFile)
+    private string[] arrWords;
+    private HashSet<string>_finalFilesNumbers = new HashSet<string>();
+    private Dictionary<string, HashSet<string>> finalFile;
+
+    public void SetFinalFile( Dictionary<string, HashSet<string>> finalFile)
     {
-        Console.WriteLine("Enter a word you want to look up :");
-        string _word = Console.ReadLine();
-        if (finalFile.TryGetValue(_word, out HashSet<string> filesNumbers))
+       this.finalFile = finalFile;
+    }
+
+    public string[] GetInput()
+    {
+        Console.WriteLine("Enter words you want to look up :");
+        _word = Console.ReadLine();
+        arrWords = _word.Split(" ");
+        return arrWords;
+    }
+    public HashSet<string> Search(string[] arrWords)
+    {
+        foreach (var w in arrWords)
         {
-            Console.WriteLine("Files that contain this word : ");
-            foreach (var number in filesNumbers)
+
+            if ((!w.StartsWith("+") && !w.StartsWith("-")))
             {
-                Console.Write($"{number}  ");
+                if (finalFile.TryGetValue(w, out HashSet<string> filesNumbers1))
+                {
+                    foreach (var number in filesNumbers1)
+                    {
+                        _finalFilesNumbers.Add(number);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("There's no such a file");
+                    System.Environment.Exit(1);
+                }
+            }
+            else if (w.StartsWith("+"))
+            {
+                w.Remove(0);
+                if (finalFile.TryGetValue(w, out HashSet<string> filesNumbers2))
+                {
+                    foreach (var number in filesNumbers2)
+                    {
+                        _finalFilesNumbers.Add(number);
+                    }
+                }
             }
         }
-        else
-        {
-            Console.WriteLine("No such a word in my files:)");
-        }
 
+        return _finalFilesNumbers;
+    }
+    public void ShowResult(HashSet<string> _finalFilesNumbers)
+    {
+        foreach (var filesNumber in _finalFilesNumbers)
+        {
+            Console.Write($"{filesNumber} ");
+        }
     }
 }
