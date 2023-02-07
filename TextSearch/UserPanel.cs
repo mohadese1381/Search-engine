@@ -2,22 +2,22 @@
 
 public class UserPanel : IUserPanel
 {
-    private string _word;
-    private string[] arrWords;
+    private string _words;
+    private string[] _arrWords;
     private HashSet<string>_finalFilesNumbers = new HashSet<string>();
-    private Dictionary<string, HashSet<string>> finalFile;
+    private Dictionary<string, HashSet<string>> _finalFile;
 
     public void SetFinalFile( Dictionary<string, HashSet<string>> finalFile)
     {
-       this.finalFile = finalFile;
+       this._finalFile = finalFile;
     }
 
     public string[] GetInput()
     {
         Console.WriteLine("Enter words you want to look up :");
-        _word = Console.ReadLine();
-        arrWords = _word.Split(" ");
-        return arrWords;
+        _words = Console.ReadLine();
+        _arrWords = _words.ToUpper().Split(" ");
+        return _arrWords;
     }
     public HashSet<string> Search(string[] arrWords)
     {
@@ -26,7 +26,7 @@ public class UserPanel : IUserPanel
 
             if ((!w.StartsWith("+") && !w.StartsWith("-")))
             {
-                if (finalFile.TryGetValue(w, out HashSet<string> filesNumbers1))
+                if (_finalFile.TryGetValue(w, out HashSet<string> filesNumbers1))
                 {
                     foreach (var number in filesNumbers1)
                     {
@@ -42,7 +42,7 @@ public class UserPanel : IUserPanel
             else if (w.StartsWith("+"))
             {
                 w.Remove(0);
-                if (finalFile.TryGetValue(w, out HashSet<string> filesNumbers2))
+                if (_finalFile.TryGetValue(w, out HashSet<string> filesNumbers2))
                 {
                     foreach (var number in filesNumbers2)
                     {

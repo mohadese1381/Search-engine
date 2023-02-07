@@ -15,7 +15,7 @@ public class FileReader : IFileReader
 
         for (int i = 0; i < filesArray.Length; i++)
         {
-            textFiles[i] = File.ReadAllText(filesArray[i]);
+            textFiles[i] = File.ReadAllText(filesArray[i]).ToUpper();
         }
 
         return textFiles;
